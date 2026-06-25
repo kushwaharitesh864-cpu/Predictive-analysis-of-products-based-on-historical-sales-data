@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SAIL | Predictive Sales Intelligence</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    linear-gradient(rgba(2,6,23,0.75),rgba(2,6,23,0.8)),
+    url('sail3.jpg') center/cover no-repeat;
+    padding:20px;
+}
+
+/* MAIN CONTAINER */
+
+.container{
+    width:100%;
+    max-width:1500px;
+    min-height:95vh;
+    display:flex;
+    border-radius:35px;
+    overflow:hidden;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.1);
+    box-shadow:0 25px 60px rgba(0,0,0,0.5);
+}
+
+/* LEFT PANEL */
+
+.left-panel{
+    width:58%;
+    padding:45px 45px 35px 45px;
+    color:white;
+    position:relative;
+
+    background:
+    linear-gradient(rgba(2,6,23,0.78),rgba(2,6,23,0.9)),
+    url('plant.jpg') center/cover no-repeat;
+}
+
+/* TITLE */
+
+.plant-title h2{
+    font-size:5rem;
+    font-weight:900;
+    letter-spacing:3px;
+    white-space:nowrap;
+}
+
+.blue-line{
+    width:90%;
+    height:5px;
+    background:#1d9bf0;
+    margin-top:12px;
+    border-radius:20px;
+}
+
+/* BRAND SECTION */
+
+.brand-row{
+    margin-top:35px;
+    display:flex;
+    align-items:center;
+    gap:40px;
+}
+
+/* SAIL BRAND */
+
+.sail-brand{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+.sail-brand img{
+    width:140px;
+    background:white;
+    padding:15px;
+    border-radius:18px;
+}
+
+.sail-text h2{
+    font-size:4rem;
+    font-weight:800;
+}
+
+.sail-text p{
+    font-size:1.2rem;
+    color:#e2e8f0;
+    line-height:1.4;
+}
+
+.vertical-line{
+    width:1px;
+    height:120px;
+    background:rgba(255,255,255,0.5);
+}
+
+/* DESH IMAGE */
+
+.desh-logo img{
+    width:170px;
+    border-radius:16px;
+}
+
+/* HERO */
+
+.hero{
+    margin-top:50px;
+}
+
+.hero h2{
+    font-size:4rem;
+    line-height:1.1;
+    font-weight:800;
+}
+
+.hero h2 span{
+    color:#1d9bf0;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:1.35rem;
+    line-height:1.7;
+    color:#e2e8f0;
+    max-width:850px;
+}
+
+/* FEATURE CARDS */
+
+.feature-grid{
+    margin-top:45px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:22px;
+    padding:28px;
+    display:flex;
+    gap:20px;
+    backdrop-filter:blur(10px);
+}
+
+.card i{
+    font-size:3rem;
+    color:#1d9bf0;
+}
+
+.card h3{
+    font-size:2rem;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#e2e8f0;
+    line-height:1.5;
+    font-size:1.15rem;
+}
+
+/* FOOTER */
+
+.footer{
+    margin-top:50px;
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.footer i{
+    font-size:3rem;
+    color:#1d9bf0;
+}
+
+.footer h3{
+    font-size:2.2rem;
+    color:#1d9bf0;
+}
+
+.footer p{
+    margin-top:5px;
+    color:#e2e8f0;
+    font-size:1.2rem;
+}
+
+/* RIGHT PANEL */
+
+.right-panel{
+    width:42%;
+    background:#f8fafc;
+    padding:70px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.login-box{
+    width:100%;
+    max-width:520px;
+}
+
+.login-box h2{
+    font-size:3.2rem;
+    color:#0f172a;
+    margin-bottom:15px;
+}
+
+.login-box .subtext{
+    color:#475569;
+    font-size:1.4rem;
+    line-height:1.6;
+    margin-bottom:45px;
+}
+
+/* FORM */
+
+.input-group{
+    margin-bottom:30px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:14px;
+    font-size:1.2rem;
+    font-weight:700;
+    color:#0f172a;
+}
+
+.input-box{
+    position:relative;
+}
+
+.input-box i{
+    position:absolute;
+    left:18px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#6b7280;
+    font-size:1.2rem;
+}
+
+.input-box input{
+    width:100%;
+    height:68px;
+    border:2px solid #dbe2ea;
+    border-radius:14px;
+    padding-left:60px;
+    font-size:1.2rem;
+    background:white;
+}
+
+.input-box input:focus{
+    outline:none;
+    border-color:#2563eb;
+}
+
+/* PASSWORD EYE */
+
+.eye{
+    position:absolute;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+}
+
+/* CAPTCHA */
+
+.captcha-box{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.captcha{
+    width:85%;
+    height:70px;
+    border:2px dashed #dbeafe;
+    background:#eff6ff;
+    border-radius:14px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:2.4rem;
+    font-weight:900;
+    letter-spacing:14px;
+    color:#1e3a8a;
+}
+
+.refresh{
+    font-size:2.2rem;
+    color:#2563eb;
+    cursor:pointer;
+}
+
+/* CHECKBOX */
+
+.checkbox{
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+    margin-top:20px;
+    margin-bottom:35px;
+}
+
+.checkbox input{
+    width:22px;
+    height:22px;
+    margin-top:4px;
+}
+
+.checkbox label{
+    color:#475569;
+    line-height:1.6;
+    font-size:1.2rem;
+}
+
+/* BUTTON */
+
+.login-btn{
+    width:100%;
+    height:72px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(to right,#2563eb,#1d4ed8);
+    color:white;
+    font-size:1.5rem;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.login-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* STATUS */
+
+#status{
+    margin-top:30px;
+    padding:22px;
+    border-radius:14px;
+    display:none;
+    font-size:1.2rem;
+    font-weight:600;
+}
+
+.success{
+    background:#dcfce7;
+    color:#166534;
+    display:block !important;
+}
+
+.error{
+    background:#fee2e2;
+    color:#991b1b;
+    display:block !important;
+}
+
+/* MOBILE */
+
+@media(max-width:1200px){
+
+    .container{
+        flex-direction:column;
+    }
+
+    .left-panel,
+    .right-panel{
+        width:100%;
+    }
+
+    .plant-title h1{
+        font-size:2.8rem;
+    }
+
+    .hero h2{
+        font-size:2.8rem;
+    }
+
+    .feature-grid{
+        grid-template-columns:1fr;
+    }
+
+    .brand-row{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .vertical-line{
+        display:none;
+    }
+}
+
+</style>
+</head>
+
+<body onload="generateCaptcha()">
+
+<div class="container">
+
+    <!-- LEFT PANEL -->
+
+    <div class="left-panel">
+
+        <div class="plant-title">
+
+            <h1>BHILAI STEEL PLANT</h1>
+                
+            <div class="blue-line"></div>
+
+        </div>
+
+        <div class="brand-row">
+
+            <div class="sail-brand">
+
+                <img src="c:\Users\HP\Downloads\sail.png" alt="SAIL">
+
+                <div class="sail-text">
+                    <h2>SAIL</h2>
+                    <p>Steel Authority of<br>India Limited</p>
+                </div>
+
+            </div>
+
+            <div class="vertical-line"></div>
+
+            <div class="desh-logo">
+
+                <img src="c:\Users\HP\Downloads\sail3.jpg"
+                alt="Har Kaam Desh Ke Naam">
+
+            </div>
+        </div>
+
+        <div class="hero">
+
+            <h2>
+                Predictive Sales<br>
+                Intelligence <span>Platform</span>
+            </h2>
+
+            <p>
+                AI-driven industrial analytics platform for forecasting sales
+                trends, optimizing product demand, and analyzing historical
+                datasets across SAIL manufacturing units.
+            </p>
+
+        </div>
+
+        <div class="feature-grid">
+
+            <div class="card">
+
+                <i class="fas fa-chart-line"></i>
+
+                <div>
+                    <h3>Predictive Analytics</h3>
+                    <p>
+                        Forecast future product demand
+                        using historical sales patterns.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fas fa-database"></i>
+
+                <div>
+                    <h3>Data Intelligence</h3>
+                    <p>
+                        Analyze large-scale industrial
+                        datasets with real-time insights.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fas fa-industry"></i>
+
+                <div>
+                    <h3>Production Planning</h3>
+                    <p>
+                        Optimize manufacturing operations
+                        with smart recommendations.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fas fa-shield-halved"></i>
+
+                <div>
+                    <h3>Secure Access</h3>
+                    <p>
+                        Enterprise-grade authentication
+                        and secure data handling.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+
+            <i class="fas fa-shield-heart"></i>
+
+            <div>
+                <h3>Har Kaam Desh Ke Naam</h3>
+                <p>Bhilai Steel Plant • Digital Transformation Initiative</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+
+    <div class="right-panel">
+
+        <div class="login-box">
+            <img src="c:\Users\HP\Downloads\sail.png" alt="SAIL">
+
+
+            <h2>Authorized Login</h2>
+
+            <p class="subtext">
+                Access predictive analytics dashboards
+                and historical sales datasets.
+            </p>
+
+            <form onsubmit="login(event)">
+
+                <div class="input-group">
+
+                    <label>Email / Employee ID</label>
+
+                    <div class="input-box">
+
+                        <i class="fas fa-user"></i>
+
+                        <input type="text"
+                        id="user"
+                        placeholder="admin@sail.in"
+                        required>
+
+                    </div>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Password</label>
+
+                    <div class="input-box">
+
+                        <i class="fas fa-lock"></i>
+
+                        <input type="password"
+                        id="pass"
+                        placeholder="Enter Password"
+                        required>
+
+                        <i class="fas fa-eye eye"></i>
+
+                    </div>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Security Verification</label>
+
+                    <div class="captcha-box">
+
+                        <div class="captcha"
+                        id="captcha"></div>
+
+                        <i class="fas fa-rotate-right refresh"
+                        onclick="generateCaptcha()"></i>
+
+                    </div>
+
+                </div>
+
+                <div class="input-group">
+
+                    <div class="input-box">
+
+                        <i class="fas fa-shield-halved"></i>
+
+                        <input type="text"
+                        id="captchaInput"
+                        placeholder="Enter CAPTCHA"
+                        required>
+
+                    </div>
+
+                </div>
+
+                <div class="checkbox">
+
+                    <input type="checkbox" required>
+
+                    <label>
+                        I authorize secure logging and agree to
+                        SAIL's enterprise data access policy.
+                    </label>
+
+                </div>
+
+                <button class="login-btn" type="submit">
+
+                    <i class="fas fa-lock"></i>
+
+                    Verify & Access Dashboard
+
+                </button>
+
+                <div id="status"></div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+let currentCaptcha='';
+
+function generateCaptcha(){
+
+    const chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+
+    currentCaptcha='';
+
+    for(let i=0;i<6;i++){
+
+        currentCaptcha+=chars.charAt(
+            Math.floor(Math.random()*chars.length)
+        );
+    }
+
+    document.getElementById('captcha').innerText=currentCaptcha;
+}
+
+function login(e) {
+    e.preventDefault();
+
+    const user = document.getElementById('user').value;
+    const pass = document.getElementById('pass').value;
+    const captcha = document.getElementById('captchaInput').value.toUpperCase();
+    const status = document.getElementById('status');
+
+    // Demo credentials
+    const validUsers = {
+        'admin@sail.in': 'sail123',
+        'manager@sail.in': 'manager123',
+        'analyst@sail.in': 'analyst123'
+    };
+
+    if (!validUsers[user]) {
+        status.innerHTML = '❌ Invalid Email/Employee ID';
+        status.className = 'error';
+        generateCaptcha();
+        return;
+    }
+
+    if (validUsers[user] !== pass) {
+        status.innerHTML = '❌ Invalid Password';
+        status.className = 'error';
+        generateCaptcha();
+        return;
+    }
+
+    if (captcha !== currentCaptcha) {
+        status.innerHTML = '❌ Invalid Security Code';
+        status.className = 'error';
+        generateCaptcha();
+        return;
+    }
+
+    // Success
+    status.innerHTML = '✅ Login Successful! Redirecting...';
+    status.className = 'success';
+
+    sessionStorage.setItem('isLoggedIn', 'true');
+    sessionStorage.setItem('userEmail', user);
+    sessionStorage.setItem('userName', user.split('@')[0]);
+    sessionStorage.setItem('loginTime', new Date().toISOString());
+
+    setTimeout(() => {
+        window.location.href = 'dashboard.html';
+    }, 1500);
+}
+</script>
+
+</body>
+</html>
